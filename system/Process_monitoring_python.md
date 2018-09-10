@@ -6,10 +6,10 @@
 
 ---
 ## 需求处理
-用Python来监测Python有没有崩溃显然是个很扯淡的一个方案，由于公司项目部署在的服务器的系统是Windows(不知道为啥不用Linux)真是令人费解，那也得做啊，写个.bat脚本吧。
-![img](https://wx4.sinaimg.cn/mw690/005RsMBrly1furllf37clj3096096q2z.jpg)
+用Python来监测Python有没有崩溃显然是个很扯淡的一个方案，由于公司项目部署在的服务器的系统是Windows(不知道为啥不用Linux)真是令人费解，那也得做啊，写个.bat脚本吧。    
 
-```bat
+![img](https://wx4.sinaimg.cn/mw690/005RsMBrly1furllf37clj3096096q2z.jpg)
+```cmd
 @echo off 
 
 rem 定义需监控程序的进程名和程序路径，可根据需要进行修改
@@ -70,4 +70,3 @@ rem 定义循环体
 
 echo on
 ```
-
