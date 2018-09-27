@@ -27,6 +27,7 @@ sql = str1.format(？？？)
 
 ```python
 import xlrd
+import copy
 
 file_path = input("请输入文件路径及文件名：")
 # 打开Excel
@@ -48,13 +49,15 @@ for i in range(ncols):
     list1.append(field_name[i])
 # for循环遍历所有行
 for j in range(2, nrows):
+    # 确保每次循环时列表里都只有表名和字段名
+    list2 = copy.deepcopy(list1)
     # 获取行数据
     rows_values = table.row_values(j)
     # for循环将各字段对应的数据添加到列表中
     for i in range(ncols):
-        list1.append(rows_values[i])
+        list2.append(rows_values[i])
     # 占位符的语法是"%s%s%s" %('a','s','d'),可以看出%后面是一个元组，所以把list1转为元组
-    tuple1 = tuple(list1)
+    tuple1 = tuple(list2)
 	sql_r = """insert into "%s"(""" + "%s," * (ncols - 1) + "%s) values(" + "'%s'," * (ncols - 1) + "'%s')"
     # 替换
     sql = sql_r %tuple1
