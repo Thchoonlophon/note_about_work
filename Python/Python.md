@@ -55,7 +55,7 @@ for j in range(2, nrows):
         list1.append(rows_values[i])
     # 占位符的语法是"%s%s%s" %('a','s','d'),可以看出%后面是一个元组，所以把list1转为元组
     tuple1 = tuple(list1)
-	sql_r = """insert into "%s"(""" + "%s," * (ncols - 1) + "%s) values(" + "'%s'," * (ncols - 1) + "'%s'"
+	sql_r = """insert into "%s"(""" + "%s," * (ncols - 1) + "%s) values(" + "'%s'," * (ncols - 1) + "'%s')"
     # 替换
     sql = sql_r %tuple1
 ```
